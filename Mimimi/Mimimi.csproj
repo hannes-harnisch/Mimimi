@@ -36,48 +36,55 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<PackageIcon>Mimimi.jpg</PackageIcon>
+		<RepositoryUrl>https://github.com/hannes-harnisch/Mimimi</RepositoryUrl>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
-	  <ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<AndroidUseAapt2>True</AndroidUseAapt2>
+		<AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+		<TrimMode>link</TrimMode>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
-	  <ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
-	  <ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
-	  <ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
-	  <ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
-	  <AndroidLinkTool>r8</AndroidLinkTool>
-	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+		<ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<AndroidLinkTool>r8</AndroidLinkTool>
+		<AndroidUseAapt2>True</AndroidUseAapt2>
+		<AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+		<TrimMode>link</TrimMode>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
-	  <ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
-	  <ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
-	  <ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
-	  <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+		<ApplicationId>com.hannesharnisch.mimimi</ApplicationId>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -107,6 +114,13 @@
 	<ItemGroup>
 		<Folder Include="Resources\Fonts\" />
 		<Folder Include="Resources\Images\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Mimimi.jpg">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ProjectExtensions>

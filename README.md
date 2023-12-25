@@ -1,0 +1,2 @@
+# Mimimi
+Cross-platform mobile app for playing a video of The Muppets' Beaker singing Feelings by Morris Albert. My dad wanted me to make this app as a Christmas gift so he can mock people he thinks are crybabies.
