@@ -6,10 +6,9 @@
     xmlns:local="clr-namespace:Mimimi"
     Shell.FlyoutBehavior="Disabled"
     Title="Mimimi">
-
-	<ShellContent
+    <ShellContent
         Title="Mimimi"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+        Route="MainPage"
+        />
 </Shell>
