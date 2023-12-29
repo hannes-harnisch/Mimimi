@@ -8,8 +8,6 @@ namespace Mimimi {
     }
 
     public partial class MainPage : ContentPage {
-        static readonly TimeSpan FeelingsBegin = TimeSpan.FromSeconds(9);
-
         private Media CurrentMedia = Media.Feelings;
 
         public MainPage() {
@@ -26,15 +24,33 @@ namespace Mimimi {
                     MediaPlayer.Source = MediaSource.FromResource("Mimimi.mp3");
                     CurrentMedia = Media.MimimiNoMusic;
                     ToggleMediaButton.Text = "Mit Musik";
+                    LoudMimimiButton.IsEnabled = false;
+                    VeryLoudMimimiButton.IsEnabled = false;
                     break;
 
                 case Media.MimimiNoMusic:
                     MediaPlayer.Source = MediaSource.FromResource("Feelings.mp4");
                     CurrentMedia = Media.Feelings;
                     ToggleMediaButton.Text = "Ohne Musik";
+                    LoudMimimiButton.IsEnabled = true;
+                    VeryLoudMimimiButton.IsEnabled = true;
                     break;
             }
             OnReset();
+        }
+
+        public void OnLoudMimimiButton(object sender, EventArgs e) {
+            if (CurrentMedia == Media.Feelings) {
+                _ = MediaPlayer.SeekTo(TimeSpan.FromSeconds(42));
+                MediaPlayer.Play();
+            }
+        }
+
+        public void OnVeryLoudMimimiButton(object sender, EventArgs e) {
+            if (CurrentMedia == Media.Feelings) {
+                _ = MediaPlayer.SeekTo(TimeSpan.FromSeconds(59));
+                MediaPlayer.Play();
+            }
         }
 
         public void OnMediaOpened(object sender, EventArgs e) {
@@ -44,7 +60,7 @@ namespace Mimimi {
         public void OnReset() {
             switch (CurrentMedia) {
                 case Media.Feelings:
-                    _ = MediaPlayer.SeekTo(FeelingsBegin);
+                    _ = MediaPlayer.SeekTo(TimeSpan.FromSeconds(9));
                     break;
 
                 case Media.MimimiNoMusic:

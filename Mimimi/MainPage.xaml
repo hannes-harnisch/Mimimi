@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Mimimi.MainPage">
-	<ScrollView>
-		<VerticalStackLayout
+    <ScrollView>
+        <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-			<toolkit:MediaElement
+            <toolkit:MediaElement
 				x:Name="MediaPlayer"
 				ShouldAutoPlay="True"
 				ShouldShowPlaybackControls="True"
@@ -16,20 +16,34 @@
 				HeightRequest="300"
 				WidthRequest="400"
 				/>
-			<Button
-                x:Name="ResetButton"
-                Text="Reset"
-                Clicked="OnResetButton"
-				HorizontalOptions="Fill"
-				FontSize="Large"
-				/>
-			<Button
+            <Button
                 x:Name="ToggleMediaButton"
                 Text="Ohne Musik"
                 Clicked="OnToggleMediaButton"
 				HorizontalOptions="Fill"
 				FontSize="Large"
 				/>
-		</VerticalStackLayout>
-	</ScrollView>
+            <Button
+                x:Name="ResetButton"
+                Text="Zum Anfang"
+                Clicked="OnResetButton"
+				HorizontalOptions="Fill"
+				FontSize="Large"
+				/>
+            <Button
+                x:Name="LoudMimimiButton"
+                Text="Miiimiii!"
+                Clicked="OnLoudMimimiButton"
+				HorizontalOptions="Fill"
+				FontSize="Large"
+				/>
+            <Button
+                x:Name="VeryLoudMimimiButton"
+                Text="MIIIIIMIIIII!!!"
+                Clicked="OnVeryLoudMimimiButton"
+				HorizontalOptions="Fill"
+				FontSize="Large"
+				/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
